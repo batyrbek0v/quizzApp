@@ -235,12 +235,14 @@ function selectToTheme() {
 }
 
           // AUTH
-window.addEventListener('load' , e => {
-  e.preventDefault()
-  if(localStorage.getItem('auth') === 'false'){
-    window.open('./auth.html' , '_self')
-  }
+
+window.addEventListener('load' , () => {
+	const auth = localStorage.getItem('auth')
+	if(auth === 'false'){
+		window.open('./auth.html', '_self')
+	}
 })
+
 
 $signOut.addEventListener('click' , e => {
   e.preventDefault()

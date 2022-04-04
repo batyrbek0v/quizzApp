@@ -10,7 +10,8 @@ window.addEventListener('load', () => {
     if(!localStorage.getItem('auth')){
         localStorage.setItem('auth' , false)
     }else{
-        if(localStorage.getItem('auth') === 'true'){
+        const auth = localStorage.getItem('auth')
+        if(auth === 'true'){
             window.open('./index.html' , '_self')
         }
     }
@@ -20,7 +21,6 @@ window.addEventListener('load', () => {
 $login.addEventListener('click', e => {
     e.preventDefault()
     if($email.value === 'admin' && $password.value === '123'){
-        localStorage.setItem('auth', true)
         setTimeout(() => {
             $error.innerHTML = 'Совершается переход.'
             $email.style.border = '2px solid green'
@@ -37,6 +37,7 @@ $login.addEventListener('click', e => {
             $error.innerHTML = 'Вы успешно авторизовались ✔'
         },2500)
         setTimeout(() => {
+            localStorage.setItem('auth', true)
             window.open('./index.html' , '_self')
         },3800)
       
