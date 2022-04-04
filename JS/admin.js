@@ -55,12 +55,12 @@ $addBtn.addEventListener('click' , e => {
 
     const question = newQuestion()
 
-    if(question){
+    if(!dataBase[choosenTheme]){
+        dataBase[choosenTheme] = []
         dataBase[choosenTheme].push(question)
-        console.log(dataBase);
         localStorage.setItem('quizApp', JSON.stringify(dataBase))
     }else{
-        alert('Fill The Area')
+        dataBase[choosenTheme].push(question)
     }
 })
 

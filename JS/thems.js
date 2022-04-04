@@ -39,7 +39,7 @@ $addTheme.addEventListener('click' , e => {
     const allThemes = JSON.parse(localStorage.getItem('themes'))
 
     const newTheme = prompt('Название предмета?')
-    
+        
     const themes = [...allThemes, newTheme]
 
     localStorage.setItem('themes', JSON.stringify(themes))
